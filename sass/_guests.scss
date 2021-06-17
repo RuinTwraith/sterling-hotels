@@ -60,6 +60,12 @@
 
   &__review {
     font-size: 1.6rem;
+    display: inline-block;
     color: $color-grey-light-1;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 1rem;
+      line-height: 1.2;
+    }
   }
 }

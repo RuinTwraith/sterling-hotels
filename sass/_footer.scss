@@ -34,7 +34,7 @@
 }
 
 .copyright {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin: 6rem auto 0;
   text-align: center;
   color: $color-grey-light-1;
@@ -42,5 +42,26 @@
 
   @media only screen and (max-width: $bp-smallest) {
     width: 90%;
+  }
+}
+
+.dibbendu {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    color: $color-grey-light-1;
+    text-decoration: none;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 60%,
+      rgba(lighten($color-secondary, 30), 0.2) 0%
+    );
+
+    transition: all 0.2s;
+    background-repeat: no-repeat;
+  }
+  &:hover,
+  &:active {
+    padding: 0 0.5rem;
   }
 }

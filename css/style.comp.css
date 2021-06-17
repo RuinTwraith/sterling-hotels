@@ -286,6 +286,9 @@ body {
         width: 30vw;
         margin: auto;
         width: 30vw; } }
+    @media only screen and (max-width: 31.25em) {
+      .about__img-box {
+        width: 40vw; } }
     .about__img-box--1 {
       top: 20%;
       left: 15%;
@@ -293,6 +296,9 @@ body {
       @media only screen and (max-width: 75em) {
         .about__img-box--1 {
           left: 24%; } }
+      @media only screen and (max-width: 31.25em) {
+        .about__img-box--1 {
+          top: 30%; } }
     .about__img-box--2 {
       top: 5%;
       left: 40%; }
@@ -472,7 +478,12 @@ body {
     color: #e1c692; }
   .guests__review {
     font-size: 1.6rem;
+    display: inline-block;
     color: #ecdbba; }
+    @media only screen and (max-width: 50em) {
+      .guests__review {
+        margin-top: 1rem;
+        line-height: 1.2; } }
 
 .resorts {
   grid-column: full-start / full-end;
@@ -632,7 +643,7 @@ body {
     transform: translateY(-3px); }
 
 .copyright {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin: 6rem auto 0;
   text-align: center;
   color: #ecdbba;
@@ -640,3 +651,14 @@ body {
   @media only screen and (max-width: 31.25em) {
     .copyright {
       width: 90%; } }
+
+.dibbendu:link, .dibbendu:visited {
+  text-transform: uppercase;
+  color: #ecdbba;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 60%, rgba(121, 187, 159, 0.2) 0%);
+  transition: all 0.2s;
+  background-repeat: no-repeat; }
+
+.dibbendu:hover, .dibbendu:active {
+  padding: 0 0.5rem; }
