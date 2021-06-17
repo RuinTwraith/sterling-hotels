@@ -1,0 +1,101 @@
+.header {
+  grid-column: full-start / col-end 5;
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.9),
+      rgba($color-secondary, 0.95)
+    ),
+    url(../img/hotel-1.jpeg);
+
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 8rem 8rem;
+
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1.5rem;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: full-start / full-end;
+    justify-items: center;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: min-content;
+  }
+
+  &__logo {
+    height: 4rem;
+    justify-self: center;
+  }
+
+  .heading-3 {
+    color: $color-primary;
+    align-self: flex-end;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+  }
+  .heading-1 {
+    color: $color-grey-light-1;
+
+    @media only screen and (max-width: $bp-smallest) {
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+  &__btn {
+    align-self: start;
+    justify-self: start;
+    padding: 2rem 2.5rem;
+    background: $color-primary;
+    color: $color-grey-light-1;
+    transition: all 0.2s;
+    box-shadow: 0 1rem 2rem rgba($color-grey-dark-1, 0.2);
+
+    @media only screen and (max-width: $bp-large) {
+      justify-self: center;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &:active {
+      transform: translateY(0px);
+    }
+  }
+
+  &__member-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-self: stretch;
+
+    font-size: 1.5rem;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+  }
+
+  &__member-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      img {
+        width: 15vw;
+      }
+    }
+  }
+}

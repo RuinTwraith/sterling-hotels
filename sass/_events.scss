@@ -1,0 +1,35 @@
+.events {
+  grid-column: full-start / full-end;
+  margin: 10rem auto;
+
+  @media only screen and (max-width: $bp-small) {
+    margin: 6rem auto;
+  }
+
+  &__text {
+    width: 60%;
+    margin: auto;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-dark-2;
+      text-decoration: none;
+      background-image: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba($color-primary, 0.4) 0%
+      );
+      transition: all 0.2s;
+      background-repeat: no-repeat;
+    }
+
+    &:hover,
+    &:active {
+      padding: 0 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.resorts {
+  grid-column: full-start / full-end;
+  max-width: $max-width-content;
+  width: 100%;
+  margin: 10rem auto 5rem;
+
+  &__container {
+    margin: 5rem auto 8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+  }
+}
+
+.resort {
+  transition: all 0.2s;
+  padding: 2rem;
+  border-radius: 4px;
+
+  &__name {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background-color: lighten($color-grey-light-1, 8);
+    box-shadow: 0 1rem 2rem rgba($color-grey-dark-2, 0.1);
+    transform: translateY(-2px);
+  }
+}

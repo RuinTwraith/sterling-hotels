@@ -1,0 +1,95 @@
+.hamburger-label {
+  &::before {
+    display: none;
+    content: "\002630";
+    position: absolute;
+    font-size: 4rem;
+    width: 10px;
+    height: 10px;
+    color: $color-grey-light-1;
+    top: 0.8rem;
+    right: 4rem;
+    z-index: 100;
+
+    @media only screen and (max-width: $bp-smallest) {
+      display: block;
+    }
+  }
+}
+.hamburger-menu {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+
+  &:checked ~ .navbar {
+    display: block;
+  }
+
+  &:checked + .hamburger-label {
+    &::before {
+      content: "\0000D7";
+      right: 3rem;
+    }
+  }
+}
+
+.navbar {
+  grid-column: full-start / full-end;
+  background-color: $color-primary;
+  font-family: $font-display;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: $color-grey-light-1;
+
+  @media only screen and (max-width: $bp-smallest) {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 16rem;
+    padding: 3rem 0 1.5rem;
+    border-radius: 3px;
+    display: none;
+  }
+
+  &__list {
+    width: 60%;
+    margin: 1.5rem auto;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-large) {
+      width: 70%;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      width: 90%;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    // flex: 1;
+
+    &:not(:last-child) {
+      border-right: 1px solid currentColor;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      &:not(:last-child) {
+        border: none;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

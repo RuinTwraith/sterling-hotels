@@ -1,0 +1,149 @@
+.rooms {
+  grid-column: full-start / full-end;
+  max-width: $max-width-content;
+  margin: 8rem auto 5rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 100%;
+  }
+}
+
+.rooms-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+}
+
+.room {
+  display: grid;
+  grid-template-columns: min-content;
+  grid-template-rows: min-content 1fr;
+  align-content: start;
+
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 60%;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+      margin-right: 0;
+    }
+  }
+
+  &__img-box {
+    width: 20vw;
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 25vw;
+    }
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      height: 100%;
+      justify-self: end;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    border-radius: 4px 4px 0 0;
+
+    @media only screen and (max-width: $bp-small) {
+      border-radius: 4px 0 0 4px;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__details {
+    padding: 4rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($color-grey-light-1, 0.5),
+      rgba($color-grey-light-1, 0.9)
+    );
+    border-radius: 0 0 4px 4px;
+    box-shadow: $box-shadow-1;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    @media only screen and (max-width: $bp-large) {
+      justify-items: center;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      justify-items: start;
+      text-align: start;
+      border-radius: 0 4px 4px 0;
+    }
+
+    @media only screen and (max-width: $bp-x-small) {
+      padding: 2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+  }
+
+  &__btn {
+    justify-self: start;
+    margin-top: 2rem;
+    position: relative;
+    transition: all 0.2s ease-out;
+    color: $color-grey-light-1;
+
+    @media only screen and (max-width: $bp-large) {
+      justify-self: center;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      justify-self: start;
+    }
+
+    &--visible {
+      transition: all 0.2s ease-out;
+      display: inline-block;
+    }
+
+    &--hidden {
+      transition: all 0.2s ease-out;
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -100%;
+      left: 0;
+      z-index: 100;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-image: linear-gradient(
+        45deg,
+        $color-primary-dark,
+        $color-primary
+      );
+    }
+
+    &:hover &--visible {
+      transform: translateY(200%);
+      opacity: 0;
+    }
+
+    &:hover &--hidden {
+      top: 1.5rem;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+%heading {
+  font-family: $font-display;
+  color: $color-grey-dark-1;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 4.5rem;
+  color: $color-primary;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 4rem;
+  }
+}
+.heading-2 {
+  @extend %heading;
+  color: $color-primary;
+  font-size: 4rem;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 3.5rem;
+  }
+}
+.heading-3 {
+  @extend %heading;
+  font-size: 1.8rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.6rem;
+}

@@ -1,0 +1,92 @@
+// COLOR VARIABLES
+// $color-primary: #c6f1e7;
+// $color-primary-light: #e3f8f3;
+
+// $color-secondary: #70acb1;
+$color-primary: #e45e43;
+$color-primary-dark: darken($color-primary, 10);
+
+$color-secondary: #346751;
+
+$color-grey-light-1: #ecdbba;
+$color-grey-light-2: darken($color-grey-light-1, 10);
+
+$color-grey-dark-1: #161616;
+$color-grey-dark-2: darken($color-grey-dark-1, 20);
+
+// FONT VARIABLES
+$font-primary: "Source Sans Pro", sans-serif;
+$font-display: "Chivo", sans-serif;
+$max-width-content: 80%;
+$box-shadow-1: 0 0.5rem 2rem rgba($color-grey-dark-1, 0.1);
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 56.25em; //900px
+$bp-small: 50em; //800px
+$bp-x-small: 37.5em; //600px
+$bp-smallest: 31.25em; //500px
+
+$bp-micro: 22.5em; //360px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10rem
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 6rem 80vh min-content 1fr;
+  grid-template-columns:
+    [full-start] minmax(min-content, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(min-content, 1fr)
+    [full-end];
+  grid-auto-flow: column;
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content 1fr;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: 100vh min-content 1fr;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  display: inline-block;
+  background-image: linear-gradient(45deg, $color-primary, $color-primary-dark);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 1.4rem 2rem;
+  font-family: $font-display;
+}
